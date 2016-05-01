@@ -1,0 +1,19 @@
+application: dorururubot
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: true
+
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: 1
+  min_pending_latency: 10000ms
+  max_pending_latency: automatic
+
+handlers:
+- url: /
+  script: index.php
+- url: /bot_callback
+  script: callback.php
+- url: /img
+  static_dir: img
